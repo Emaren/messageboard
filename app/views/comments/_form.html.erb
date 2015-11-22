@@ -1,4 +1,7 @@
 <%= simple_form_for([@message, @message.comments.build]) do |f| %>
   <%= f.input :content, label: "Comment" %>
-  <%= f.button :submit %>
+  <p class="" align="center">
+  <%= f.button :submit, :class => "btn-custom" %>
+
+  </p>
   <% end %>

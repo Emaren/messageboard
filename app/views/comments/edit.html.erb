@@ -1,5 +1,8 @@
+<div class="col-md-8 col-md-offset-2">
+
 <h1>Edit Comments</h1>
 <%= simple_form_for([@message, @comment]) do |f| %>
   <%= f.input :content, label: "Comment" %>
   <%= f.button :submit %>
 <% end %>
+</div>
