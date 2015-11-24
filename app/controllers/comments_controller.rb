@@ -7,12 +7,15 @@ class CommentsController < ApplicationController
 
     @comment = @message.comments.create(comment_params)
     @comment.user_id = current_user.id
-
+    respond_to do |format|
     if @comment.save
-      redirect_to message_path(@message)
+      format.html {redirect_to message_path(@message)}
+      format.js { render :create_success }
     else
-      render 'new'
+      format.html { render 'messages/show' }
+      format.js   { render :create_failure }
     end
+  end
   end
 
   def edit
